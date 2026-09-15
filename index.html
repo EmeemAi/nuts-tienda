@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NUTS • Tienda Online | Frutos Secos & Almacén Saludable</title>
+  <meta name="description" content="Hacé tu pedido online en NUTS: Frutos secos seleccionados, granolas caseras, harinas, semillas, productos Sin TACC y combos especiales con entrega a domicilio sin cargo." />
+  
+  <!-- OpenGraph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NUTS • Tienda Online | Frutos Secos & Almacén Saludable" />
+  <meta property="og:description" content="Pedí tus frutos secos, harinas, semillas y combos del mes de forma fácil y rápida con entrega a domicilio sin cargo." />
+  <meta property="og:image" content="assets/logo.svg" />
+  <meta name="theme-color" content="#FAF7F2" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              sand: '#FAF7F2',
+              cream: '#F4EFE6',
+              dark: '#18181B',
+              muted: '#71717A',
+              accent: '#D97706',
+              accentHover: '#B45309',
+              gold: '#E5A83A',
+              sintacc: '#059669',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-brand-sand min-h-screen flex flex-col antialiased text-stone-800">
+
+  <!-- ========================================== -->
+  <!-- BANNER SUPERIOR DE BENEFICIOS              -->
+  <!-- ========================================== -->
+  <div class="bg-stone-900 text-stone-200 text-xs py-2 px-4 border-b border-stone-800 shadow-inner">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-3 mx-auto sm:mx-0 flex-wrap justify-center">
+        <span class="inline-flex items-center gap-1.5 font-bold text-amber-400">
+          <span>🚲</span> Entregas a domicilio SIN CARGO
+        </span>
+        <span class="hidden md:inline text-stone-600">•</span>
+        <span class="inline-flex items-center gap-1 text-stone-300 font-medium">
+          <span>🌾</span> Especialistas en productos Sin TACC
+        </span>
+        <span class="hidden lg:inline text-stone-600">•</span>
+        <span class="hidden lg:inline-flex items-center gap-1 text-stone-300">
+          <span>💳</span> Efectivo o Transferencia
+        </span>
+      </div>
+      
+      <div class="hidden sm:flex items-center gap-4 text-stone-400 text-xs mx-auto sm:mx-0">
+        <a href="https://instagram.com/nuts.food.ba" target="_blank" class="hover:text-amber-400 transition-colors flex items-center gap-1">
+          <span>📸</span> @nuts.food.ba
+        </a>
+        <a href="https://wa.me/5491151315757" target="_blank" class="hover:text-emerald-400 transition-colors flex items-center gap-1">
+          <span>💬</span> 11 5131-5757
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- NAVBAR PRINCIPAL                           -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-40 nav-glass transition-all">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      
+      <!-- Logotipo NUTS -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-9 sm:w-16 sm:h-11 flex items-center justify-center transition-transform group-hover:scale-105">
+          <img src="assets/logo.svg" alt="NUTS Logotipo" class="w-full h-full object-contain" />
+        </div>
+        <div class="hidden xs:block">
+          <div class="font-extrabold tracking-tight text-lg text-stone-900 leading-none">NUTS</div>
+          <span class="text-[10px] uppercase font-bold tracking-wider text-amber-700">Dietética & Almacén</span>
+        </div>
+      </a>
+
+      <!-- Botones de Acción Superiores -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+
+
+        <!-- Botón Instagram Móvil -->
+        <a href="https://instagram.com/nuts.food.ba" target="_blank" 
+           class="inline-flex sm:hidden p-2 rounded-xl text-stone-700 bg-stone-100 hover:bg-stone-200 transition-colors" title="Instagram @nuts.food.ba">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+
+        <!-- Botón Abrir Carrito (Desktop & Móvil) -->
+        <button type="button" 
+                class="open-cart-btn cart-trigger-btn flex items-center gap-2 px-3.5 py-2 bg-stone-900 hover:bg-stone-800 text-white rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all active:scale-95">
+          <div class="relative">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            <span class="cart-count-badge hidden absolute -top-2 -right-2 bg-amber-500 text-stone-950 text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center shadow">
+              0
+            </span>
+          </div>
+          <span class="hidden sm:inline" id="header-cart-total">$0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- HERO BANNER CON IDENTIDAD NUTS             -->
+  <!-- ========================================== -->
+  <section class="relative bg-gradient-to-b from-stone-900 to-stone-950 text-white overflow-hidden py-8 sm:py-12 px-4">
+    <!-- Patrón botánico decorativo de fondo -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#e5a83a_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+      
+      <!-- Badge de Estado -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-800/80 border border-stone-700 text-xs font-semibold text-amber-300 mb-4 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Tomando pedidos con entrega sin cargo</span>
+      </div>
+
+      <!-- Título Principal -->
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3 text-stone-100">
+        Comé rico, sano y natural con <span class="text-amber-400 underline decoration-amber-500/40">NUTS</span>
+      </h1>
+
+      <!-- Bajada -->
+      <p class="text-stone-300 text-sm sm:text-base max-w-2xl mx-auto mb-6 leading-relaxed">
+        Frutos secos de última cosecha, granolas caseras, harinas, semillas, productos Sin TACC certificados y los mejores combos del mes con envío a domicilio directo a tu casa.
+      </p>
+
+      <!-- Guía de Compra en 3 Pasos -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto pt-2">
+        <div class="bg-stone-800/60 backdrop-blur border border-stone-700/60 rounded-xl p-3 text-left flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">1</div>
+          <div class="text-xs">
+            <span class="font-bold text-stone-200 block">Elegí tus favoritos</span>
+            <span class="text-stone-400">Seleccioná 1kg, 500g o unidad</span>
+          </div>
+        </div>
+        <div class="bg-stone-800/60 backdrop-blur border border-stone-700/60 rounded-xl p-3 text-left flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">2</div>
+          <div class="text-xs">
+            <span class="font-bold text-stone-200 block">Cargá tu carrito</span>
+            <span class="text-stone-400">Revisá cantidades y totales</span>
+          </div>
+        </div>
+        <div class="bg-stone-800/60 backdrop-blur border border-stone-700/60 rounded-xl p-3 text-left flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">3</div>
+          <div class="text-xs">
+            <span class="font-bold text-stone-200 block">Enviá a WhatsApp</span>
+            <span class="text-stone-400">Te confirmamos y te lo llevamos</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- BARRA DE BÚSQUEDA Y FILTROS                -->
+  <!-- ========================================== -->
+  <div class="sticky top-[57px] sm:top-[65px] z-30 bg-brand-sand/95 backdrop-blur border-b border-stone-200/80 py-3 px-4 shadow-2xs">
+    <div class="max-w-6xl mx-auto space-y-3">
+      
+      <!-- Fila Buscador y Filtros Rápidos -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+        
+        <!-- Input de Búsqueda -->
+        <div class="relative flex-1">
+          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input type="text" 
+                 id="search-input" 
+                 placeholder="Buscar por producto (ej: almendras, keto, miel, chia)..." 
+                 class="w-full pl-10 pr-9 py-2 bg-white border border-stone-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/40 focus:border-amber-500 shadow-2xs transition-all" />
+          <button type="button" id="clear-search-btn" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-700">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Filtros Rápidos Chips -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0">
+          <button type="button" id="filter-sintacc-btn" 
+                  class="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold border border-stone-200 bg-white hover:bg-emerald-50 text-stone-700 whitespace-nowrap shadow-2xs transition-all">
+            <span>🌾</span>
+            <span>Solo Sin TACC</span>
+          </button>
+
+          <button type="button" id="filter-combos-btn" 
+                  class="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold border border-stone-200 bg-white hover:bg-amber-50 text-stone-700 whitespace-nowrap shadow-2xs transition-all">
+            <span>🎁</span>
+            <span>Combos del Mes</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Fila de Categorías Horizontales -->
+      <div class="overflow-x-auto no-scrollbar py-1 -mx-4 px-4">
+        <div id="categories-container" class="flex items-center gap-2 min-w-max">
+          <!-- Renderizado dinámico desde app.js -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- CATÁLOGO PRINCIPAL                         -->
+  <!-- ========================================== -->
+  <main class="max-w-6xl mx-auto px-4 py-6 flex-1 w-full">
+    
+    <!-- Encabezado de Resultados -->
+    <div class="flex items-center justify-between mb-5">
+      <div class="flex items-center gap-2">
+        <h2 class="text-xl sm:text-2xl font-black text-stone-900 tracking-tight">Catálogo de Productos</h2>
+        <span class="text-xs font-bold text-stone-500 bg-stone-200/80 px-2 py-0.5 rounded-full" id="results-count">
+          Cargando...
+        </span>
+      </div>
+
+      <div class="text-xs text-stone-500 hidden sm:block">
+        💡 Podés elegir <strong class="text-stone-700">500g o 1kg</strong> en cada producto
+      </div>
+    </div>
+
+    <!-- Grilla de Productos -->
+    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+      <!-- Renderizado dinámico desde app.js -->
+    </div>
+
+    <!-- Estado Vacío (Sin resultados) -->
+    <div id="empty-state" class="hidden text-center py-16 px-4 bg-white rounded-2xl border border-stone-200 my-8">
+      <div class="w-16 h-16 mx-auto mb-3 text-stone-300 flex items-center justify-center text-4xl">
+        🔍
+      </div>
+      <h3 class="text-lg font-bold text-stone-800 mb-1">No encontramos productos para tu búsqueda</h3>
+      <p class="text-xs sm:text-sm text-stone-500 max-w-sm mx-auto mb-4">
+        Probá buscando con otros términos como almendra, nuez, combo, o limpiá los filtros activos.
+      </p>
+      <button type="button" onclick="document.getElementById('search-input').value=''; AppModule.init();" 
+              class="px-4 py-2 bg-stone-900 text-white rounded-xl text-xs font-bold hover:bg-stone-800 transition-colors">
+        Restablecer catálogo
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- BARRA FLOTANTE MÓVIL DEL CARRITO           -->
+  <!-- ========================================== -->
+  <div id="mobile-cart-bar" class="fixed bottom-0 inset-x-0 z-40 bg-stone-900/95 backdrop-blur border-t border-stone-800 p-3 sm:hidden transform translate-y-full transition-transform duration-300 shadow-2xl">
+    <div class="flex items-center justify-between gap-3">
+      <div class="text-left">
+        <span class="text-[10px] uppercase font-bold text-amber-400 block tracking-wider" id="mobile-cart-items-count">0 productos</span>
+        <div class="text-lg font-black text-white" id="mobile-cart-total">$0</div>
+      </div>
+      <button type="button" class="open-cart-btn flex items-center gap-2 px-4 py-2.5 bg-amber-500 active:scale-95 hover:bg-amber-600 text-stone-950 font-black text-xs rounded-xl shadow-md transition-all">
+        <span>Ver mi Carrito</span>
+        <span>🛒</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- DRAWER / MODAL DEL CARRITO DE COMPRAS      -->
+  <!-- ========================================== -->
+  <div id="cart-backdrop" class="fixed inset-0 bg-stone-950/60 backdrop-blur-xs z-50 hidden transition-opacity"></div>
+  
+  <aside id="cart-drawer" class="fixed inset-y-0 right-0 w-full sm:max-w-md bg-white z-50 shadow-2xl cart-drawer hidden-drawer flex flex-col justify-between">
+    
+    <!-- Header del Carrito -->
+    <div class="p-4 border-b border-stone-200 flex items-center justify-between bg-stone-50">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">🛒</span>
+        <div>
+          <h3 class="font-extrabold text-base text-stone-900 leading-tight">Tu Carrito NUTS</h3>
+          <span class="text-[11px] text-stone-500">Revisá tus productos antes de enviar</span>
+        </div>
+      </div>
+      
+      <div class="flex items-center gap-2">
+        <button type="button" id="clear-cart-btn" class="text-xs text-stone-500 hover:text-rose-600 font-semibold px-2 py-1 transition-colors" title="Vaciar Carrito">
+          Vaciar
+        </button>
+        <button type="button" id="close-cart-btn" class="p-1.5 text-stone-400 hover:text-stone-800 rounded-lg hover:bg-stone-200 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Banner de Envío Gratis -->
+    <div class="bg-emerald-50 border-b border-emerald-200 px-4 py-2 flex items-center gap-2 text-xs font-semibold text-emerald-900">
+      <span class="text-base">🚲</span>
+      <span>¡Tenés <strong>Entregas a Domicilio SIN CARGO</strong> incluidas!</span>
+    </div>
+
+    <!-- Contenido del Carrito (Scrollable) -->
+    <div class="p-4 overflow-y-auto flex-1 space-y-4">
+      
+      <!-- Vista Vacía -->
+      <div id="cart-empty-view" class="hidden text-center py-16 px-4">
+        <div class="text-5xl mb-3">🧺</div>
+        <h4 class="font-bold text-stone-800 text-base mb-1">Tu carrito todavía está vacío</h4>
+        <p class="text-xs text-stone-500 max-w-xs mx-auto mb-4">
+          Explorá nuestros frutos secos, harinas, semillas o combos del mes y agregalos con un solo toque.
+        </p>
+      </div>
+
+      <!-- Vista con Productos -->
+      <div id="cart-filled-view" class="space-y-4">
+        <!-- Lista de Ítems -->
+        <div id="cart-items-container" class="space-y-2.5">
+          <!-- Renderizado desde app.js -->
+        </div>
+
+        <!-- Formulario de Datos del Cliente -->
+        <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 space-y-3 mt-4">
+          <div class="flex items-center gap-1.5 font-bold text-xs text-stone-800 border-b border-stone-200 pb-2">
+            <span>📍</span>
+            <span>Datos para la entrega</span>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold text-stone-700 mb-1">Tu Nombre y Apellido *</label>
+            <input type="text" id="checkout-name" placeholder="Ej: María González" 
+                   class="w-full px-3 py-2 bg-white border border-stone-200 rounded-xl text-xs focus:ring-2 focus:ring-amber-500/40 focus:outline-none" required />
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-[11px] font-bold text-stone-700 mb-1">WhatsApp de contacto</label>
+              <input type="tel" id="checkout-phone" placeholder="Ej: 11 2345-6789" 
+                     class="w-full px-3 py-2 bg-white border border-stone-200 rounded-xl text-xs focus:ring-2 focus:ring-amber-500/40 focus:outline-none" />
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold text-stone-700 mb-1">Método de Pago</label>
+              <select id="checkout-payment" class="w-full px-3 py-2 bg-white border border-stone-200 rounded-xl text-xs focus:ring-2 focus:ring-amber-500/40 focus:outline-none">
+                <option value="Efectivo contra entrega">Efectivo contra entrega</option>
+                <option value="Transferencia Bancaria">Transferencia Bancaria</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="cash-amount-wrapper">
+            <label class="block text-[11px] font-bold text-stone-700 mb-1">¿Con cuánto dinero abonás? (para el vuelto)</label>
+            <input type="number" id="checkout-cash-amount" placeholder="Ej: 60000" 
+                   class="w-full px-3 py-2 bg-white border border-stone-200 rounded-xl text-xs focus:ring-2 focus:ring-amber-500/40 focus:outline-none" />
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold text-stone-700 mb-1">Dirección de entrega *</label>
+            <input type="text" id="checkout-address" placeholder="Calle, número, piso/depto, entrecalles o barrio" 
+                   class="w-full px-3 py-2 bg-white border border-stone-200 rounded-xl text-xs focus:ring-2 focus:ring-amber-500/40 focus:outline-none" required />
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold text-stone-700 mb-1">Notas o aclaraciones (opcional)</label>
+            <input type="text" id="checkout-notes" placeholder="Ej: Tocar timbre 4B / Dejar en recepción" 
+                   class="w-full px-3 py-2 bg-white border border-stone-200 rounded-xl text-xs focus:ring-2 focus:ring-amber-500/40 focus:outline-none" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer del Drawer con Total y Botones -->
+    <div class="p-4 border-t border-stone-200 bg-stone-50 space-y-2.5">
+      <div class="flex items-center justify-between text-stone-900">
+        <span class="text-xs font-bold text-stone-600 uppercase tracking-wider">Total a pagar:</span>
+        <span class="text-2xl font-black" id="cart-total-price">$0</span>
+      </div>
+
+      <!-- Botón Principal: WhatsApp -->
+      <button type="button" id="checkout-whatsapp-btn" 
+              class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white font-extrabold text-sm rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span>Confirmar Pedido por WhatsApp</span>
+      </button>
+
+      <!-- Botones Auxiliares -->
+      <div class="grid grid-cols-2 gap-2">
+        <button type="button" id="copy-order-btn" 
+                class="py-2 px-3 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold rounded-xl transition-colors flex items-center justify-center gap-1">
+          <span>📋</span> Copiar resumen
+        </button>
+        <button type="button" id="print-order-btn" 
+                class="py-2 px-3 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold rounded-xl transition-colors flex items-center justify-center gap-1">
+          <span>🖨️</span> Imprimir ticket
+        </button>
+      </div>
+
+    </div>
+
+  </aside>
+
+  <!-- ========================================== -->
+  <!-- MODAL DE DETALLE DE COMBOS                 -->
+  <!-- ========================================== -->
+  <div id="combo-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/60 backdrop-blur-xs hidden">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-stone-200 relative animate-fadeIn">
+      
+      <button type="button" id="close-combo-modal-btn" class="absolute top-4 right-4 text-stone-400 hover:text-stone-700 p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <div class="flex items-center gap-2 text-amber-800 font-bold text-xs uppercase tracking-wider mb-1">
+        <span>🎁</span> Combo Especial del Mes
+      </div>
+
+      <h3 class="text-xl font-extrabold text-stone-900 mb-1" id="combo-modal-title">Combo</h3>
+      <div class="text-2xl font-black text-amber-600 mb-3" id="combo-modal-price">$0</div>
+
+      <p class="text-xs text-stone-600 mb-4" id="combo-modal-desc"></p>
+
+      <div class="mb-5">
+        <h4 class="text-xs font-bold text-stone-800 mb-2 uppercase tracking-wide">¿Qué incluye este combo?</h4>
+        <ul id="combo-modal-list" class="space-y-1.5 max-h-60 overflow-y-auto pr-1">
+          <!-- Renderizado dinámico -->
+        </ul>
+      </div>
+
+      <button type="button" id="combo-modal-add-btn" 
+              class="w-full py-3 bg-stone-900 hover:bg-stone-800 text-white font-bold text-sm rounded-xl shadow transition-all flex items-center justify-center gap-2">
+        <span>Agregar Combo al Carrito</span>
+        <span>🛒</span>
+      </button>
+
+    </div>
+  </div>
+
+
+
+  <!-- ========================================== -->
+  <!-- MODAL DE ADMINISTRACIÓN DEL DUEÑO          -->
+  <!-- ========================================== -->
+  <div id="admin-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/75 backdrop-blur-xs hidden">
+    <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 shadow-2xl border border-stone-200 relative flex flex-col">
+      
+      <div class="flex items-center justify-between border-b border-stone-200 pb-3 mb-4">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">⚙️</span>
+          <div>
+            <h3 class="text-lg font-black text-stone-900">Panel de Administración de NUTS</h3>
+            <span class="text-xs text-stone-500">Actualizá precios y stock sin tocar código</span>
+          </div>
+        </div>
+        <button type="button" id="close-admin-modal-btn" class="text-stone-400 hover:text-stone-700 p-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Configuración General -->
+      <div class="bg-stone-50 p-3.5 rounded-2xl border border-stone-200 mb-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <label class="block text-xs font-bold text-stone-700 mb-1">Teléfono WhatsApp de Pedidos</label>
+          <input type="text" id="admin-cfg-whatsapp" value="5491151315757" 
+                 class="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-xs" />
+        </div>
+        <div class="flex items-end gap-2">
+          <button type="button" id="export-admin-btn" class="px-3 py-1.5 bg-stone-200 hover:bg-stone-300 text-stone-800 text-xs font-bold rounded-lg transition-colors">
+            📥 Descargar Copia JSON
+          </button>
+          <button type="button" id="reset-admin-btn" class="px-3 py-1.5 bg-rose-100 hover:bg-rose-200 text-rose-800 text-xs font-bold rounded-lg transition-colors">
+            ↺ Restaurar Flyer
+          </button>
+        </div>
+      </div>
+
+      <!-- Lista de Productos para Edición -->
+      <div class="flex-1 overflow-y-auto space-y-2 mb-4 pr-1" id="admin-products-list">
+        <!-- Renderizado dinámico desde admin.js -->
+      </div>
+
+      <!-- Botón Guardar -->
+      <div class="border-t border-stone-200 pt-3 flex justify-end gap-3">
+        <button type="button" onclick="AdminModule.closeAdminModal()" class="px-4 py-2 bg-stone-200 text-stone-700 font-bold text-xs rounded-xl hover:bg-stone-300 transition-colors">
+          Cancelar
+        </button>
+        <button type="button" id="save-admin-btn" class="px-6 py-2 bg-stone-900 hover:bg-stone-800 text-white font-bold text-xs rounded-xl shadow transition-all">
+          Guardar Cambios
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Contenedor de Toasts Flotantes -->
+  <div id="toast-container"></div>
+
+  <!-- ========================================== -->
+  <!-- FOOTER                                     -->
+  <!-- ========================================== -->
+  <footer class="bg-stone-900 text-stone-400 text-xs border-t border-stone-800 mt-auto pt-10 pb-20 sm:pb-10">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
+      
+      <!-- Columna Marca -->
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <img src="assets/logo.svg" alt="NUTS" class="w-12 h-8 object-contain" />
+          <span class="text-white font-extrabold text-base">NUTS DIETÉTICA</span>
+        </div>
+        <p class="text-stone-400 text-xs leading-relaxed mb-3">
+          Almacén saludable y frutos secos seleccionados. Comprometidos con tu bienestar y nutrición cotidiana.
+        </p>
+        <div class="text-amber-400 font-semibold text-xs">
+          🚲 Entregas a domicilio SIN CARGO
+        </div>
+      </div>
+
+      <!-- Columna Contacto y Pagos -->
+      <div>
+        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Contacto & Pagos</h4>
+        <ul class="space-y-2 text-xs">
+          <li class="flex items-center gap-2">
+            <span>💬</span>
+            <a href="https://wa.me/5491151315757" target="_blank" class="hover:text-white transition-colors">WhatsApp: 11 5131-5757</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <span>📸</span>
+            <a href="https://instagram.com/nuts.food.ba" target="_blank" class="hover:text-white transition-colors">Instagram: @nuts.food.ba</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <span>💳</span>
+            <span>Efectivo o Transferencia bancaria</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span>🌾</span>
+            <span>Variedad certificada Sin TACC</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna Administración / Flyes -->
+      <div>
+        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Herramientas</h4>
+        <ul class="space-y-2 text-xs">
+          <li>
+            <button type="button" id="open-admin-btn" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+              <span>⚙️</span>
+              <span>Modo Administrador (Editar precios)</span>
+            </button>
+          </li>
+
+          <li class="text-stone-500 text-[11px] pt-2">
+            Atajo rápido para administradores: <kbd class="px-1.5 py-0.5 bg-stone-800 rounded text-stone-300 font-mono">Shift + Alt + A</kbd>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Barra Inferior de Derechos -->
+    <div class="border-t border-stone-800/80 pt-4 text-center text-stone-500 text-[11px]">
+      © 2026 NUTS • Todos los derechos reservados • Desarrollado para potenciar las ventas de Dietética NUTS.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

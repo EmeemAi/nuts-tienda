@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 100" width="100%" height="100%">
+  <defs>
+    <filter id="subtle-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+  <!-- Background Badge (Pebble/Seed Silhouette) -->
+  <path d="M 50 10 
+           C 15 10, 5 30, 5 50 
+           C 5 70, 15 90, 50 90 
+           L 190 90 
+           C 225 90, 235 70, 235 50 
+           C 235 30, 225 10, 190 10 
+           Z" 
+        fill="#111111" 
+        stroke="#FFFFFF" 
+        stroke-width="2.5"
+        stroke-opacity="0.9"
+        filter="url(#subtle-shadow)" />
+
+  <!-- Stylized Brand Typography "nuts" -->
+  <g fill="#FFFFFF" transform="translate(42, 28)">
+    <!-- 'n' -->
+    <path d="M 0 44 L 0 10 C 0 3, 5 0, 12 0 C 19 0, 24 3, 24 10 L 24 44 L 17 44 L 17 12 C 17 7, 15 6, 12 6 C 9 6, 7 7, 7 12 L 7 44 Z" />
+    <!-- 'u' -->
+    <path d="M 33 0 L 40 0 L 40 32 C 40 37, 42 38, 45 38 C 48 38, 50 37, 50 32 L 50 0 L 57 0 L 57 34 C 57 41, 52 44, 45 44 C 38 44, 33 41, 33 34 Z" />
+    <!-- 't' -->
+    <path d="M 68 8 L 68 0 L 74 0 L 74 8 L 86 8 L 86 14 L 74 14 L 74 34 C 74 37, 76 38, 80 38 L 86 38 L 86 44 C 80 44, 68 44, 68 34 L 68 14 L 64 14 L 64 8 Z" />
+    <!-- 's' -->
+    <path d="M 97 34 C 97 41, 103 44, 112 44 C 122 44, 127 40, 127 33 C 127 25, 118 24, 108 22 C 103 21, 101 19, 101 16 C 101 12, 105 7, 112 7 C 119 7, 123 10, 124 16 L 130 15 C 129 7, 122 1, 112 1 C 103 1, 95 6, 95 15 C 95 23, 104 25, 114 27 C 120 28, 121 30, 121 34 C 121 38, 116 39, 112 39 C 106 39, 103 36, 103 32 Z" />
+  </g>
+</svg>

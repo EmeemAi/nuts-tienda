@@ -1,0 +1,17 @@
+{
+  "name": "NUTS • Tienda Online",
+  "short_name": "NUTS",
+  "description": "Tienda online de Dietética NUTS. Frutos secos, granolas, harinas, semillas, productos Sin TACC y combos especiales con entrega sin cargo.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FAF7F2",
+  "theme_color": "#FAF7F2",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
