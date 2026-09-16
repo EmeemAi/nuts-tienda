@@ -589,18 +589,27 @@ const AppModule = (function () {
         const shippingBar = document.getElementById('shipping-progress-bar');
 
         if (shippingBar && shippingText && shippingPercent) {
-            const percent = Math.min(100, Math.round((totalPrice / freeThreshold) * 100));
-            shippingBar.style.width = `${percent}%`;
-            shippingPercent.textContent = `${percent}%`;
-
-            if (totalPrice >= freeThreshold) {
+            if (cart.length === 0 || totalPrice === 0) {
+                shippingText.innerHTML = `<span>🚲</span> Envíos SIN CARGO a partir de $40.000`;
+                shippingPercent.textContent = `0%`;
+                shippingBar.style.width = `0%`;
+                shippingBar.className = "bg-amber-500 h-2 rounded-full transition-all duration-300";
+                if (shippingBanner) {
+                    shippingBanner.className = "bg-amber-50/90 border-b border-amber-200 px-4 py-2.5 transition-all text-amber-900";
+                }
+            } else if (totalPrice >= freeThreshold) {
                 shippingText.innerHTML = `<span>🎉</span> ¡Tenés <strong>Envío a Domicilio SIN CARGO</strong>!`;
+                shippingPercent.textContent = `100%`;
+                shippingBar.style.width = `100%`;
                 shippingBar.className = "bg-emerald-500 h-2 rounded-full transition-all duration-300";
                 if (shippingBanner) {
                     shippingBanner.className = "bg-emerald-50 border-b border-emerald-200 px-4 py-2.5 transition-all text-emerald-900";
                 }
             } else {
+                const percent = Math.min(100, Math.round((totalPrice / freeThreshold) * 100));
                 const remaining = freeThreshold - totalPrice;
+                shippingBar.style.width = `${percent}%`;
+                shippingPercent.textContent = `${percent}%`;
                 shippingText.innerHTML = `<span>🚲</span> Agregá <strong>${formatCurrency(remaining)}</strong> más para <strong>Envío Gratis</strong>`;
                 shippingBar.className = "bg-amber-500 h-2 rounded-full transition-all duration-300";
                 if (shippingBanner) {
@@ -615,7 +624,10 @@ const AppModule = (function () {
         const checkoutWaBtn = document.getElementById('checkout-whatsapp-btn');
 
         if (minOrderAlert && minOrderAlertText && checkoutWaBtn) {
-            if (totalPrice > 0 && totalPrice < minOrder) {
+            if (cart.length === 0 || totalPrice === 0) {
+                minOrderAlert.classList.add('hidden');
+                checkoutWaBtn.disabled = true;
+            } else if (totalPrice < minOrder) {
                 const remainingMin = minOrder - totalPrice;
                 minOrderAlert.classList.remove('hidden');
                 minOrderAlertText.innerHTML = `Te faltan <strong>${formatCurrency(remainingMin)}</strong> para alcanzar el mínimo de compra.`;
@@ -645,17 +657,21 @@ const AppModule = (function () {
         const emptyView = document.getElementById('cart-empty-view');
         const filledView = document.getElementById('cart-filled-view');
         const totalElement = document.getElementById('cart-total-price');
+        const drawerFooter = document.getElementById('cart-drawer-footer');
 
         if (!container) return;
 
         if (cart.length === 0) {
             if (emptyView) emptyView.classList.remove('hidden');
             if (filledView) filledView.classList.add('hidden');
+            if (drawerFooter) drawerFooter.classList.add('hidden');
+            if (totalElement) totalElement.textContent = formatCurrency(0);
             return;
         }
 
         if (emptyView) emptyView.classList.add('hidden');
         if (filledView) filledView.classList.remove('hidden');
+        if (drawerFooter) drawerFooter.classList.remove('hidden');
         if (totalElement) totalElement.textContent = formatCurrency(totalPrice);
 
         let html = '';
@@ -1039,6 +1055,9 @@ const AppModule = (function () {
         openCartBtns.forEach(btn => btn.addEventListener('click', openDrawer));
         if (closeCartBtn) closeCartBtn.addEventListener('click', closeDrawer);
         if (cartBackdrop) cartBackdrop.addEventListener('click', closeDrawer);
+
+        const emptyShopBtn = document.getElementById('cart-empty-shop-btn');
+        if (emptyShopBtn) emptyShopBtn.addEventListener('click', closeDrawer);
 
         // Botones de Checkout dentro del Carrito
         const checkoutWaBtn = document.getElementById('checkout-whatsapp-btn');

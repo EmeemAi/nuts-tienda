@@ -340,9 +340,12 @@
       <div id="cart-empty-view" class="hidden text-center py-16 px-4">
         <div class="text-5xl mb-3">🧺</div>
         <h4 class="font-bold text-stone-800 text-base mb-1">Tu carrito todavía está vacío</h4>
-        <p class="text-xs text-stone-500 max-w-xs mx-auto mb-4">
+        <p class="text-xs text-stone-500 max-w-xs mx-auto mb-5">
           Explorá nuestros frutos secos, harinas, semillas o combos del mes y agregalos con un solo toque.
         </p>
+        <button type="button" id="cart-empty-shop-btn" class="px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white rounded-xl text-xs font-bold transition-colors shadow-sm">
+          Explorar Catálogo
+        </button>
       </div>
 
       <!-- Vista con Productos -->
@@ -403,7 +406,7 @@
     </div>
 
     <!-- Footer del Drawer con Total y Botones -->
-    <div class="p-4 border-t border-stone-200 bg-stone-50 space-y-2.5">
+    <div id="cart-drawer-footer" class="p-4 border-t border-stone-200 bg-stone-50 space-y-2.5">
       <div class="flex items-center justify-between text-stone-900">
         <span class="text-xs font-bold text-stone-600 uppercase tracking-wider">Total a pagar:</span>
         <span class="text-2xl font-black" id="cart-total-price">$0</span>
