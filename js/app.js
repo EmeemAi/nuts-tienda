@@ -914,7 +914,14 @@ const AppModule = (function () {
             </div>
         `;
 
+        const cleanupTicket = () => {
+            const el = document.getElementById('print-ticket-area');
+            if (el) el.remove();
+        };
+
+        window.addEventListener('afterprint', cleanupTicket, { once: true });
         window.print();
+        setTimeout(cleanupTicket, 1000);
     }
 
     // ==========================================

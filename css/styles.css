@@ -172,6 +172,10 @@ h1, h2, h3, .font-brand {
 }
 
 /* Printable Ticket Styles */
+#print-ticket-area {
+  display: none !important;
+}
+
 @media print {
   body * {
     visibility: hidden;
@@ -180,6 +184,7 @@ h1, h2, h3, .font-brand {
     visibility: visible;
   }
   #print-ticket-area {
+    display: block !important;
     position: absolute;
     left: 0;
     top: 0;
