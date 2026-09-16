@@ -10,7 +10,9 @@ const NUTS_CONFIG = {
     whatsapp: "5491151315757",
     whatsappDisplay: "11 5131-5757",
     instagram: "nuts.food.ba",
-    shippingBenefit: "Entregas a domicilio SIN CARGO",
+    minOrderAmount: 20000, // Mínimo de compra requerido por NUTS
+    freeShippingThreshold: 40000, // Envío gratis a partir de $40.000
+    shippingBenefit: "Entregas a domicilio SIN CARGO a partir de $40.000",
     paymentMethods: "Efectivo o Transferencia",
     currencySymbol: "$",
     adminPin: "1234" // PIN por defecto para el modo administrador del dueño

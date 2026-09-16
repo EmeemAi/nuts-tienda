@@ -77,6 +77,16 @@ const AdminModule = (function () {
             sessionStorage.setItem('nuts_admin_auth', 'true');
         }
 
+        const effectiveCfg = getEffectiveConfig();
+        const waInput = document.getElementById('admin-cfg-whatsapp');
+        if (waInput) waInput.value = effectiveCfg.whatsapp || "5491151315757";
+
+        const minOrderInput = document.getElementById('admin-cfg-min-order');
+        if (minOrderInput) minOrderInput.value = effectiveCfg.minOrderAmount || 20000;
+
+        const freeShipInput = document.getElementById('admin-cfg-free-shipping');
+        if (freeShipInput) freeShipInput.value = effectiveCfg.freeShippingThreshold || 40000;
+
         renderAdminProductsList();
         modal.classList.remove('hidden');
     }
@@ -165,14 +175,25 @@ const AdminModule = (function () {
             }
         });
 
-        // Configuración de WhatsApp
+        // Configuración de WhatsApp y montos
+        if (!overrides.config) overrides.config = {};
         const waInput = document.getElementById('admin-cfg-whatsapp');
         if (waInput && waInput.value) {
             overrides.config.whatsapp = waInput.value.replace(/[^0-9]/g, '');
         }
 
+        const minOrderInput = document.getElementById('admin-cfg-min-order');
+        if (minOrderInput && minOrderInput.value) {
+            overrides.config.minOrderAmount = parseFloat(minOrderInput.value) || 20000;
+        }
+
+        const freeShipInput = document.getElementById('admin-cfg-free-shipping');
+        if (freeShipInput && freeShipInput.value) {
+            overrides.config.freeShippingThreshold = parseFloat(freeShipInput.value) || 40000;
+        }
+
         saveOverrides();
-        alert("¡Precios y disponibilidad actualizados exitosamente!");
+        alert("¡Precios, montos y disponibilidad actualizados exitosamente!");
         closeAdminModal();
 
         // Re-render catálogo en AppModule

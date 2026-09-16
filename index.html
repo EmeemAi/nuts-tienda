@@ -52,7 +52,11 @@
     <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2 text-center sm:text-left">
       <div class="flex items-center gap-3 mx-auto sm:mx-0 flex-wrap justify-center">
         <span class="inline-flex items-center gap-1.5 font-bold text-amber-400">
-          <span>🚲</span> Entregas a domicilio SIN CARGO
+          <span>🚲</span> Entregas SIN CARGO (desde $40.000)
+        </span>
+        <span class="hidden md:inline text-stone-600">•</span>
+        <span class="inline-flex items-center gap-1 text-amber-200 font-bold">
+          <span>📦</span> Compra mínima: $20.000
         </span>
         <span class="hidden md:inline text-stone-600">•</span>
         <span class="inline-flex items-center gap-1 text-stone-300 font-medium">
@@ -316,10 +320,17 @@
       </div>
     </div>
 
-    <!-- Banner de Envío Gratis -->
-    <div class="bg-emerald-50 border-b border-emerald-200 px-4 py-2 flex items-center gap-2 text-xs font-semibold text-emerald-900">
-      <span class="text-base">🚲</span>
-      <span>¡Tenés <strong>Entregas a Domicilio SIN CARGO</strong> incluidas!</span>
+    <!-- Banner Dinámico de Envío Gratis & Compra Mínima -->
+    <div id="cart-shipping-banner" class="bg-amber-50/90 border-b border-amber-200 px-4 py-2.5 transition-all">
+      <div class="flex items-center justify-between text-xs font-bold mb-1.5">
+        <span id="shipping-progress-text" class="text-amber-900 flex items-center gap-1.5">
+          <span>🚲</span> Envío gratis a partir de $40.000
+        </span>
+        <span id="shipping-progress-percent" class="text-amber-800 text-[11px] font-extrabold bg-amber-200/60 px-1.5 py-0.5 rounded">0%</span>
+      </div>
+      <div class="w-full bg-amber-200/50 rounded-full h-2 overflow-hidden">
+        <div id="shipping-progress-bar" class="bg-amber-500 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+      </div>
     </div>
 
     <!-- Contenido del Carrito (Scrollable) -->
@@ -396,6 +407,15 @@
       <div class="flex items-center justify-between text-stone-900">
         <span class="text-xs font-bold text-stone-600 uppercase tracking-wider">Total a pagar:</span>
         <span class="text-2xl font-black" id="cart-total-price">$0</span>
+      </div>
+
+      <!-- Alerta de Compra Mínima ($20.000) -->
+      <div id="min-order-alert" class="hidden p-3 bg-amber-50 border border-amber-300/80 rounded-xl text-xs text-amber-950 font-medium flex items-center gap-2.5">
+        <span class="text-lg">⚠️</span>
+        <div class="flex-1">
+          <span class="font-bold block text-amber-900">Compra mínima: $20.000</span>
+          <span id="min-order-alert-text" class="text-[11px] text-amber-800">Agregá $20.000 más para poder enviar tu pedido.</span>
+        </div>
       </div>
 
       <!-- Botón Principal: WhatsApp -->
@@ -484,20 +504,30 @@
       </div>
 
       <!-- Configuración General -->
-      <div class="bg-stone-50 p-3.5 rounded-2xl border border-stone-200 mb-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div class="bg-stone-50 p-3.5 rounded-2xl border border-stone-200 mb-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
         <div>
-          <label class="block text-xs font-bold text-stone-700 mb-1">Teléfono WhatsApp de Pedidos</label>
+          <label class="block text-xs font-bold text-stone-700 mb-1">WhatsApp de Pedidos</label>
           <input type="text" id="admin-cfg-whatsapp" value="5491151315757" 
                  class="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-xs" />
         </div>
-        <div class="flex items-end gap-2">
-          <button type="button" id="export-admin-btn" class="px-3 py-1.5 bg-stone-200 hover:bg-stone-300 text-stone-800 text-xs font-bold rounded-lg transition-colors">
-            📥 Descargar Copia JSON
-          </button>
-          <button type="button" id="reset-admin-btn" class="px-3 py-1.5 bg-rose-100 hover:bg-rose-200 text-rose-800 text-xs font-bold rounded-lg transition-colors">
-            ↺ Restaurar Flyer
-          </button>
+        <div>
+          <label class="block text-xs font-bold text-stone-700 mb-1">Compra Mínima ($)</label>
+          <input type="number" id="admin-cfg-min-order" value="20000" step="1000"
+                 class="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-xs" />
         </div>
+        <div>
+          <label class="block text-xs font-bold text-stone-700 mb-1">Envío Gratis Desde ($)</label>
+          <input type="number" id="admin-cfg-free-shipping" value="40000" step="1000"
+                 class="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-lg text-xs" />
+        </div>
+      </div>
+      <div class="flex justify-end gap-2 mb-3">
+        <button type="button" id="export-admin-btn" class="px-3 py-1.5 bg-stone-200 hover:bg-stone-300 text-stone-800 text-xs font-bold rounded-lg transition-colors">
+          📥 Descargar Copia JSON
+        </button>
+        <button type="button" id="reset-admin-btn" class="px-3 py-1.5 bg-rose-100 hover:bg-rose-200 text-rose-800 text-xs font-bold rounded-lg transition-colors">
+          ↺ Restaurar Flyer
+        </button>
       </div>
 
       <!-- Lista de Productos para Edición -->
