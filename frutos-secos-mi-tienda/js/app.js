@@ -37,19 +37,15 @@ const App = (function () {
     }
 
     function loadConfig() {
-        try {
-            const saved = localStorage.getItem(STORAGE_CONFIG_KEY);
-            if (saved) {
-                const parsed = JSON.parse(saved);
-                Object.assign(TIENDA_CONFIG, parsed);
-            }
-        } catch (e) {
-            console.warn("No se pudo cargar config personalizada, usando default.");
+        if (typeof AdminModule !== 'undefined') {
+            Object.assign(TIENDA_CONFIG, AdminModule.getEffectiveConfig());
         }
     }
 
     function loadCatalog() {
-        products = Array.isArray(PRODUCTS_DATA) ? [...PRODUCTS_DATA] : [];
+        products = (typeof AdminModule !== 'undefined') 
+            ? AdminModule.getEffectiveProducts() 
+            : (Array.isArray(PRODUCTS_DATA) ? [...PRODUCTS_DATA] : []);
         
         // Inicializar estado por tarjeta
         products.forEach(p => {
