@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FRUTOS SECOS MI TIENDA • Frutos Secos & Almacén Natural</title>
+  <meta name="description" content="Pedí online en Frutos Secos Mi Tienda: Gran variedad de frutos secos, mixs, harinas, semillas, congelados, confituras y alimentos Sin TACC. Envío gratis en CABA desde $50.000 y 5% de descuento en efectivo desde $60.000." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              terracotta: '#cb6d51',
+              terracottaDark: '#b2583f',
+              terracottaLight: '#fbebe6',
+              peach: '#f9d8b9',
+              peachLight: '#fdeddf',
+              cream: '#fcf9f5',
+              sage: '#588157',
+              sageLight: '#eaf1ea',
+              dark: '#23201e'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-[#fcf9f5] min-h-screen flex flex-col antialiased text-stone-800">
+
+  <!-- ========================================== -->
+  <!-- BANNER SUPERIOR DE CONDICIONES COMERCIALES -->
+  <!-- ========================================== -->
+  <aside aria-label="Promociones destacadas" class="bg-[#f7d9b9] text-stone-900 text-xs py-2.5 px-4 border-b border-[#eec59f] shadow-xs">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-3 mx-auto sm:mx-0 flex-wrap justify-center font-bold">
+        <span class="inline-flex items-center gap-1.5 text-[#a8472f]">
+          <span>🛵</span> ENVÍO GRATIS EN CABA DESDE $50.000
+        </span>
+        <span class="hidden md:inline text-stone-400">•</span>
+        <span class="inline-flex items-center gap-1 text-[#2d6a3f]">
+          <span>🏷️</span> 5% DE DESCUENTO EN EFECTIVO DESDE $60.000
+        </span>
+        <span class="hidden md:inline text-stone-400">•</span>
+        <span class="inline-flex items-center gap-1 text-stone-700">
+          <span>📦</span> ENVÍOS A GBA A CONVENIR
+        </span>
+      </div>
+      
+      <div class="hidden sm:flex items-center gap-4 text-xs font-semibold text-stone-700 mx-auto sm:mx-0">
+        <span class="inline-flex items-center gap-1 text-[#2d6a3f]">
+          <span>🌿</span> Calidad Seleccionada
+        </span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================== -->
+  <!-- NAVBAR PRINCIPAL                           -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-40 nav-glass transition-all">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      
+      <!-- Logotipo Oficial -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="h-10 sm:h-12 w-auto flex items-center justify-center transition-transform group-hover:scale-105">
+          <img src="assets/logo.svg" alt="Frutos Secos Mi Tienda Logo" class="h-10 sm:h-12 w-auto object-contain" />
+        </div>
+      </a>
+
+      <!-- Buscador Rápido Central en Desktop -->
+      <div class="hidden md:flex flex-1 max-w-md mx-4">
+        <div class="relative w-full">
+          <input type="text" 
+                 id="search-input" 
+                 placeholder="Buscar nueces, almendras, harinas, aceites..." 
+                 class="w-full bg-stone-50 hover:bg-white focus:bg-white text-xs sm:text-sm text-stone-800 placeholder-stone-400 rounded-2xl pl-10 pr-4 py-2 border border-stone-200 focus:outline-none focus:border-[#cb6d51] focus:ring-2 focus:ring-[#cb6d51]/20 transition-all shadow-xs" />
+          <svg class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Acciones: Filtro Sin TACC y Carrito -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- Botón Filtro Rápido Sin TACC -->
+        <button type="button" 
+                id="filter-sintacc-btn"
+                class="flex items-center gap-1.5 px-3 py-2 rounded-2xl text-xs font-bold border border-stone-200 bg-white hover:border-[#588157] text-stone-700 transition-all shadow-xs">
+          <span class="w-2 h-2 rounded-full bg-[#588157]"></span>
+          <span>Sin TACC</span>
+        </button>
+
+        <!-- Botón Abrir Carrito -->
+        <button type="button" 
+                class="open-cart-btn flex items-center gap-2 px-3.5 py-2 bg-[#cb6d51] hover:bg-[#b2583f] text-white rounded-2xl font-extrabold text-xs sm:text-sm shadow-md shadow-[#cb6d51]/25 transition-all active:scale-95">
+          <div class="relative">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            <span class="cart-count-badge hidden absolute -top-2 -right-2.5 bg-[#23201e] text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center shadow">
+              0
+            </span>
+          </div>
+          <span class="hidden sm:inline" id="header-cart-total">$0</span>
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Buscador móvil debajo de la barra -->
+    <div class="px-4 pb-3 md:hidden">
+      <div class="relative w-full">
+        <input type="text" 
+               oninput="document.getElementById('search-input').value = this.value; document.getElementById('search-input').dispatchEvent(new Event('input'))"
+               placeholder="Buscar en el catálogo..." 
+               class="w-full bg-stone-50 focus:bg-white text-xs text-stone-800 placeholder-stone-400 rounded-xl pl-9 pr-4 py-2 border border-stone-200 focus:outline-none focus:border-[#cb6d51] transition-all shadow-xs" />
+        <svg class="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- HERO BANNER CON ESTÉTICA DE LA EMPRESA     -->
+  <!-- ========================================== -->
+  <section class="relative bg-gradient-to-br from-[#cb6d51] via-[#c26245] to-[#a84c32] text-white overflow-hidden py-10 sm:py-14 px-4 shadow-inner">
+    <!-- Patrón floral suave de fondo -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ffffff_1.2px,transparent_1.2px)] [background-size:20px_20px]"></div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      
+      <!-- Badge de Estado de Pedidos -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 text-xs font-bold text-amber-100 mb-4 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>Tomando pedidos online con entregas a domicilio</span>
+      </div>
+
+      <!-- Título de Marca -->
+      <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-3 text-white leading-tight">
+        Frutos Secos, Semillas & Despensa Natural
+      </h1>
+
+      <!-- Bajada descriptiva -->
+      <p class="text-sm sm:text-base text-amber-50/90 max-w-2xl mx-auto mb-6 leading-relaxed">
+        Armá tu pedido a medida seleccionando pesos por kilo, medio kilo o presentaciones fraccionadas. Envíos directos a tu puerta.
+      </p>
+
+      <!-- Tarjetas de Beneficios Clave -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
+        <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-3 flex items-center gap-3">
+          <span class="text-2xl">🛵</span>
+          <div>
+            <div class="text-xs font-extrabold text-white">Envío Gratis CABA</div>
+            <div class="text-[11px] text-amber-100">Superando los $50.000</div>
+          </div>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-3 flex items-center gap-3">
+          <span class="text-2xl">🏷️</span>
+          <div>
+            <div class="text-xs font-extrabold text-white">5% OFF Efectivo</div>
+            <div class="text-[11px] text-amber-100">A partir de los $60.000</div>
+          </div>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-3 flex items-center gap-3">
+          <span class="text-2xl">🌾</span>
+          <div>
+            <div class="text-xs font-extrabold text-white">Opciones Sin TACC</div>
+            <div class="text-[11px] text-amber-100">Productos certificados</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- BARRA HORIZONTAL DE CATEGORÍAS             -->
+  <!-- ========================================== -->
+  <nav aria-label="Categorías de productos" class="sticky top-[61px] md:top-[68px] z-30 bg-[#fcf9f5]/95 backdrop-blur-sm border-b border-stone-200/80 py-3 px-4 shadow-xs">
+    <div class="max-w-6xl mx-auto">
+      <div id="categories-pills" class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+        <!-- Renderizado dinámico desde app.js -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================== -->
+  <!-- CATÁLOGO PRINCIPAL DE PRODUCTOS            -->
+  <!-- ========================================== -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-8">
+    
+    <!-- Encabezado de Sección y Contador -->
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-black text-stone-900 tracking-tight">Catálogo de Productos</h2>
+        <p class="text-xs text-stone-500 mt-0.5">Elegí la presentación o peso para ver el precio actualizado.</p>
+      </div>
+
+      <div id="results-count" class="text-xs font-bold text-stone-500 bg-white border border-stone-200 px-3 py-1.5 rounded-xl shadow-xs">
+        0 productos
+      </div>
+    </div>
+
+    <!-- Grilla Reactiva de Productos -->
+    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Se puebla dinámicamente con las tarjetas de productos -->
+    </div>
+
+    <!-- Estado Vacío (Sin resultados) -->
+    <div id="empty-state" class="hidden py-16 text-center max-w-md mx-auto">
+      <div class="w-16 h-16 bg-[#fbebe6] text-[#cb6d51] rounded-3xl flex items-center justify-center mx-auto mb-4 text-2xl">
+        🔍
+      </div>
+      <h3 class="text-lg font-black text-stone-900 mb-1">No encontramos productos coincidentes</h3>
+      <p class="text-xs text-stone-500 mb-4">Probá buscar con otra palabra clave o cambiá el filtro de categoría.</p>
+      <button type="button" 
+              onclick="document.getElementById('search-input').value=''; document.getElementById('search-input').dispatchEvent(new Event('input'))"
+              class="px-4 py-2 bg-stone-900 text-white rounded-xl text-xs font-bold hover:bg-stone-800 transition-colors">
+        Limpiar búsqueda
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- DRAWER LATERAL: CARRITO & CHECKOUT         -->
+  <!-- ========================================== -->
+  <!-- Backdrop oscuro -->
+  <div id="cart-backdrop" class="fixed inset-0 bg-stone-950/40 backdrop-blur-xs z-50 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+
+  <!-- Panel Drawer -->
+  <aside id="cart-drawer" 
+         class="fixed top-0 right-0 bottom-0 w-full sm:w-[460px] bg-white z-50 shadow-2xl transition-transform duration-300 translate-x-full flex flex-col justify-between overflow-hidden">
+    
+    <!-- Header del Carrito -->
+    <div class="p-4 border-b border-stone-200 flex items-center justify-between bg-[#fcf9f5]">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl bg-[#cb6d51] text-white flex items-center justify-center font-bold">
+          🛒
+        </div>
+        <div>
+          <h3 class="font-black text-stone-900 text-base leading-tight">Tu Carrito</h3>
+          <p class="text-[11px] text-stone-500">Frutos Secos Mi Tienda</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button type="button" 
+                id="clear-cart-btn" 
+                class="text-xs text-stone-400 hover:text-rose-600 font-bold px-2 py-1 rounded transition-colors" title="Vaciar todo el carrito">
+          Vaciar
+        </button>
+        <button type="button" 
+                id="close-cart-btn" 
+                class="w-8 h-8 flex items-center justify-center rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-600 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Barra Dinámica de Envío Gratis CABA -->
+    <div id="shipping-progress-container" class="p-3 border-b border-stone-100 bg-white">
+      <!-- Calculado reactivamente en app.js -->
+    </div>
+
+    <!-- Contenido Scrolleable del Carrito -->
+    <div class="flex-1 overflow-y-auto p-4 space-y-3">
+      
+      <!-- Lista de Ítems -->
+      <div id="cart-items-container" class="space-y-2.5">
+        <!-- Renderizado dinámico -->
+      </div>
+
+      <!-- Carrito Vacío -->
+      <div id="cart-empty-state" class="hidden py-16 text-center">
+        <div class="text-4xl mb-3">🧺</div>
+        <h4 class="font-extrabold text-stone-800 text-sm mb-1">Tu carrito todavía está vacío</h4>
+        <p class="text-xs text-stone-400 max-w-xs mx-auto">Explorá el catálogo y agregá tus frutos secos y productos favoritos.</p>
+      </div>
+
+    </div>
+
+    <!-- Footer del Carrito con Checkout -->
+    <div id="cart-footer" class="p-4 bg-[#fcf9f5] border-t border-stone-200 space-y-3 shadow-inner">
+      
+      <!-- Aviso de descuento en efectivo -->
+      <div id="cash-discount-notice"></div>
+
+      <!-- Selector de Zona de Envío -->
+      <div class="bg-white p-3 rounded-2xl border border-stone-200/90 text-xs">
+        <label class="block font-bold text-stone-700 mb-1.5">Zona de Entrega:</label>
+        <div class="grid grid-cols-2 gap-2">
+          <label class="flex items-center gap-2 p-2 rounded-xl border border-stone-200 cursor-pointer hover:border-[#cb6d51] transition-colors">
+            <input type="radio" name="delivery_zone" value="caba" checked class="text-[#cb6d51] focus:ring-[#cb6d51]" />
+            <span class="font-semibold text-stone-800">CABA (Capital)</span>
+          </label>
+          <label class="flex items-center gap-2 p-2 rounded-xl border border-stone-200 cursor-pointer hover:border-[#cb6d51] transition-colors">
+            <input type="radio" name="delivery_zone" value="gba" class="text-[#cb6d51] focus:ring-[#cb6d51]" />
+            <span class="font-semibold text-stone-800">GBA (Provincia)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Selector de Forma de Pago -->
+      <div class="bg-white p-3 rounded-2xl border border-stone-200/90 text-xs">
+        <label class="block font-bold text-stone-700 mb-1.5">Forma de Pago:</label>
+        <div class="grid grid-cols-2 gap-2">
+          <label class="flex items-center gap-2 p-2 rounded-xl border border-stone-200 cursor-pointer hover:border-[#cb6d51] transition-colors">
+            <input type="radio" name="payment_method" value="efectivo" checked class="text-[#cb6d51] focus:ring-[#cb6d51]" />
+            <div>
+              <span class="font-semibold text-stone-800 block">Efectivo</span>
+              <span class="text-[10px] text-emerald-700 font-bold">5% OFF >$60k</span>
+            </div>
+          </label>
+          <label class="flex items-center gap-2 p-2 rounded-xl border border-stone-200 cursor-pointer hover:border-[#cb6d51] transition-colors">
+            <input type="radio" name="payment_method" value="transferencia" class="text-[#cb6d51] focus:ring-[#cb6d51]" />
+            <div>
+              <span class="font-semibold text-stone-800 block">Transferencia</span>
+              <span class="text-[10px] text-stone-500">CBU / Alias</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Vuelto en Efectivo -->
+        <div id="cash-details-container" class="mt-2.5 pt-2 border-t border-stone-100">
+          <label class="block text-[11px] font-bold text-stone-600 mb-1">¿Con cuánto dinero vas a abonar? (Opcional para llevar cambio):</label>
+          <input type="number" 
+                 id="cash-change-input" 
+                 placeholder="Ej: 50000" 
+                 class="w-full text-xs font-semibold bg-stone-50 border border-stone-200 rounded-xl px-3 py-1.5 focus:outline-none focus:border-[#cb6d51]" />
+        </div>
+      </div>
+
+      <!-- Desglose de Totales -->
+      <div class="space-y-1.5 text-xs pt-1">
+        <div class="flex justify-between text-stone-600">
+          <span>Subtotal productos:</span>
+          <span id="cart-subtotal-val" class="font-bold text-stone-800">$0</span>
+        </div>
+        <div id="cart-discount-row" class="hidden flex justify-between text-emerald-600 font-bold">
+          <span>Descuento 5% Efectivo:</span>
+          <span id="cart-discount-val">-$0</span>
+        </div>
+        <div class="flex justify-between text-stone-600">
+          <span>Envío a domicilio:</span>
+          <span id="cart-shipping-val" class="font-bold">A calcular</span>
+        </div>
+        <div class="flex justify-between text-base font-black text-stone-900 pt-2 border-t border-stone-300">
+          <span>Total a Pagar:</span>
+          <span id="cart-total-val" class="text-[#cb6d51] text-lg font-black">$0</span>
+        </div>
+      </div>
+
+      <!-- Formulario de Checkout a WhatsApp -->
+      <form id="checkout-form" class="space-y-2 pt-2 border-t border-stone-200">
+        <div class="grid grid-cols-2 gap-2">
+          <input type="text" 
+                 id="checkout-name" 
+                 required 
+                 placeholder="Tu Nombre completo *" 
+                 class="w-full text-xs bg-white border border-stone-200 rounded-xl px-3 py-2 focus:outline-none focus:border-[#cb6d51]" />
+          <input type="tel" 
+                 id="checkout-phone" 
+                 placeholder="Teléfono de contacto" 
+                 class="w-full text-xs bg-white border border-stone-200 rounded-xl px-3 py-2 focus:outline-none focus:border-[#cb6d51]" />
+        </div>
+
+        <input type="text" 
+               id="checkout-address" 
+               required 
+               placeholder="Dirección de entrega, Barrio y Piso/Depto *" 
+               class="w-full text-xs bg-white border border-stone-200 rounded-xl px-3 py-2 focus:outline-none focus:border-[#cb6d51]" />
+
+        <input type="text" 
+               id="checkout-notes" 
+               placeholder="Observaciones (ej: timbre no anda, horario)" 
+               class="w-full text-xs bg-white border border-stone-200 rounded-xl px-3 py-2 focus:outline-none focus:border-[#cb6d51]" />
+
+        <div class="flex gap-2 pt-1">
+          <button type="submit" 
+                  class="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] active:scale-95 text-white font-black text-xs sm:text-sm py-3 px-4 rounded-2xl shadow-lg shadow-[#25D366]/25 transition-all">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.164.578 4.195 1.588 5.952l-1.688 6.168 6.368-1.669c1.697.929 3.639 1.459 5.732 1.459 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/>
+            </svg>
+            <span>Pedir por WhatsApp</span>
+          </button>
+
+          <button type="button" 
+                  id="btn-print-ticket" 
+                  title="Ver o imprimir comprobante" 
+                  class="p-3 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-2xl transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+            </svg>
+          </button>
+        </div>
+      </form>
+
+    </div>
+
+  </aside>
+
+  <!-- ========================================== -->
+  <!-- MODAL TICKET / COMPROBANTE IMPRIMIBLE      -->
+  <!-- ========================================== -->
+  <div id="ticket-modal" class="hidden fixed inset-0 bg-stone-950/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
+      
+      <div id="ticket-content">
+        <!-- Renderizado dinámico del ticket -->
+      </div>
+
+      <div class="flex gap-3 pt-3 border-t border-stone-100 no-print">
+        <button type="button" 
+                id="trigger-print-action"
+                class="flex-1 bg-[#cb6d51] hover:bg-[#b2583f] text-white font-bold py-2.5 px-4 rounded-xl text-xs transition-colors">
+          🖨️ Imprimir / Guardar PDF
+        </button>
+        <button type="button" 
+                id="close-ticket-btn" 
+                class="bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold py-2.5 px-4 rounded-xl text-xs transition-colors">
+          Cerrar
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- FOOTER                                     -->
+  <!-- ========================================== -->
+  <footer class="bg-stone-900 text-stone-300 py-10 px-4 mt-16 border-t border-stone-800">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-xs">
+      <div>
+        <div class="font-black text-white text-base mb-2">FRUTOS SECOS MI TIENDA</div>
+        <p class="text-stone-400 leading-relaxed">
+          Especialistas en frutos secos, deshidratados, semillas, harinas y productos naturales seleccionados con máxima frescura y trazabilidad.
+        </p>
+      </div>
+
+      <div>
+        <div class="font-bold text-white text-sm mb-2">Condiciones Comerciales</div>
+        <ul class="space-y-1.5 text-stone-400">
+          <li>• <strong class="text-white">Envío Gratis en CABA:</strong> A partir de $50.000</li>
+          <li>• <strong class="text-white">5% de Descuento:</strong> En efectivo desde $60.000</li>
+          <li>• <strong class="text-white">Envíos a GBA:</strong> Consultar costos según localidad</li>
+          <li>• <strong class="text-white">Pagos:</strong> Efectivo o Transferencia bancaria</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="font-bold text-white text-sm mb-2">Atención & Pedidos</div>
+        <p class="text-stone-400 leading-relaxed mb-3">
+          Atención personalizada y toma de pedidos directa vía WhatsApp para particulares, familias y comercios.
+        </p>
+        <div class="inline-flex items-center gap-1.5 text-[#f9d8b9] font-bold">
+          <span>🌿</span> Calidad, Frescura y Confianza
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto pt-8 mt-8 border-t border-stone-800/80 text-center text-stone-500 text-[11px]">
+      © 2026 FRUTOS SECOS MI TIENDA • Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

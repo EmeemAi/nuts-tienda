@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8ba888" />
+      <stop offset="50%" stop-color="#588157" />
+      <stop offset="100%" stop-color="#3a5a40" />
+    </linearGradient>
+    <linearGradient id="terracottaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e07a5f" />
+      <stop offset="100%" stop-color="#cb6d51" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Gráfica Botánica Superior: Ramo de hojas orgánicas -->
+  <g transform="translate(210, 26)" filter="url(#softShadow)">
+    <!-- Hoja Central -->
+    <path d="M 0,-18 C 6,-10 8,-2 0,6 C -8,-2 -6,-10 0,-18 Z" fill="url(#leafGrad)" />
+    <path d="M 0,-16 L 0,4" stroke="#ffffff" stroke-width="0.8" opacity="0.6" />
+
+    <!-- Hojas Izquierda -->
+    <path d="M -7,-12 C -15,-12 -18,-4 -12,2 C -6,2 -3,-5 -7,-12 Z" fill="#606c38" opacity="0.9" />
+    <path d="M -16,-3 C -23,0 -23,8 -16,10 C -11,8 -10,2 -16,-3 Z" fill="url(#leafGrad)" opacity="0.85" />
+    <path d="M -11,6 C -18,12 -14,20 -7,18 C -3,14 -5,8 -11,6 Z" fill="#a3b18a" opacity="0.9" />
+
+    <!-- Hojas Derecha -->
+    <path d="M 7,-12 C 15,-12 18,-4 12,2 C 6,2 3,-5 7,-12 Z" fill="#606c38" opacity="0.9" />
+    <path d="M 16,-3 C 23,0 23,8 16,10 C 11,8 10,2 16,-3 Z" fill="url(#leafGrad)" opacity="0.85" />
+    <path d="M 11,6 C 18,12 14,20 7,18 C 3,14 5,8 11,6 Z" fill="#a3b18a" opacity="0.9" />
+
+    <!-- Pequeñas Bayas / Semillas Terracota -->
+    <circle cx="-5" cy="-2" r="2.2" fill="#cb6d51" />
+    <circle cx="5" cy="-2" r="2.2" fill="#e07a5f" />
+    <circle cx="0" cy="8" r="1.8" fill="#dd836d" />
+  </g>
+
+  <!-- Tipografía: FRUTOS SECOS -->
+  <text x="210" y="78" 
+        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+        font-size="28" 
+        font-weight="900" 
+        letter-spacing="5" 
+        text-anchor="middle" 
+        fill="#cb6d51">
+    FRUTOS SECOS
+  </text>
+
+  <!-- Tipografía: MI TIENDA -->
+  <text x="210" y="104" 
+        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+        font-size="19" 
+        font-weight="700" 
+        letter-spacing="9" 
+        text-anchor="middle" 
+        fill="#588157">
+    MI TIENDA
+  </text>
+</svg>

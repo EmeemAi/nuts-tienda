@@ -1,0 +1,122 @@
+/* ===================================================
+   FRUTOS SECOS MI TIENDA - ESTILOS PERSONALIZADOS
+   Paleta: Terracota cálido, Salmón tostado, Crema & Oliva
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --color-terracotta: #cb6d51;
+  --color-terracotta-dark: #b2583f;
+  --color-terracotta-light: #fbebe6;
+  --color-peach: #f9d8b9;
+  --color-cream: #faf5ee;
+  --color-sage: #588157;
+  --color-sage-light: #eaf1ea;
+  --color-dark: #23201e;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #fcf9f5;
+  color: #2b2826;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Glassmorphism Header */
+.nav-glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(203, 109, 81, 0.12);
+}
+
+/* Scrollbar estilizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f0e6;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4a796;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cb6d51;
+}
+
+/* Efecto hover suave en tarjetas */
+.card-hover {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px -10px rgba(203, 109, 81, 0.14), 0 6px 12px -4px rgba(0, 0, 0, 0.04);
+  border-color: rgba(203, 109, 81, 0.35);
+}
+
+/* Pills de selector de peso */
+.weight-btn {
+  transition: all 0.18s ease;
+}
+.weight-btn.active {
+  background-color: #cb6d51;
+  color: #ffffff;
+  border-color: #cb6d51;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(203, 109, 81, 0.3);
+}
+
+/* Badges temáticos */
+.badge-sintacc {
+  background-color: #eaf5eb;
+  color: #2b6e3b;
+  border: 1px solid #b7e4be;
+}
+
+.badge-descuento {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  animation: pulse-subtle 2s infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.94; transform: scale(1.02); }
+}
+
+/* Animación cuando se agrega al carrito */
+@keyframes addedToCart {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+.animate-added {
+  animation: addedToCart 0.35s ease-out;
+}
+
+/* Modal Ticket para Impresión */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #ticket-modal, #ticket-modal * {
+    visibility: visible;
+  }
+  #ticket-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    background: white !important;
+    box-shadow: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
